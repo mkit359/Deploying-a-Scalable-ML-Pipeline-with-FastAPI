@@ -3,7 +3,7 @@
 For additional information see the Model Card paper: https://arxiv.org/pdf/1810.03993.pdf
 
 ## Model Details
-**Model Date:** 2025 July
+**Model Date:** 2025 July //
 **Model Type:** Traing model utilizing RandomForestClassifer for Machine Learning
 **Framework:** Scikit-learn
 **Version:**  1.0.0
