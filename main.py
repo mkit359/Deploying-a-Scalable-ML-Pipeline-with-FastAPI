@@ -37,7 +37,7 @@ app = FastAPI()
 @app.get("/")
 async def get_root():
     """ Say hello!"""
-    return {'welcome_message:' 'Hello there and welcome!'}
+    return "Hello there and welcome!"
 
 
 # TODO: create a POST on a different path that does model inference
@@ -69,4 +69,4 @@ async def post_inference(data: Data):
     )
 
     _inference = inference(model, data_processed)
-    return {"result": apply_label(_inference)}
+    return apply_label(_inference)
