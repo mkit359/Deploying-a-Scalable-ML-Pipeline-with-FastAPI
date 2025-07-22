@@ -17,8 +17,6 @@ def test_shape_consistency():
     assert data.shape[0] == training_rows + testing_rows
 
 
-
-# TODO: implement the second test. Change the function name and input as needed
 def test_ML_model_algorithm():
     """
     # Reviewing if the ML model is utilizing the RandomForestClassifier as expected
@@ -29,7 +27,6 @@ def test_ML_model_algorithm():
     assert isinstance(model, RandomForestClassifier)
 
 
-# TODO: implement the third test. Change the function name and input as needed
 def test_three():
     """
     # Reviewing that the precision, recall and fbeta are greater than or equal to 0 and less than or equall to one.
