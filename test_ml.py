@@ -1,28 +1,48 @@
 import pytest
-# TODO: add necessary import
+import numpy as np
+from sklearn.ensemble import RandomForestClassifier
+from ml.data import process_data
+from ml.model import train_model, compute_model_metrics, load_model
+from train_model import data, train, test, X_train, y_train 
 
-# TODO: implement the first test. Change the function name and input as needed
-def test_one():
+
+def test_shape_consistency():
     """
-    # add description for the first test
+    # Makes sure that joining the training and testing set, produces the same shape as the original dataset.
     """
-    # Your code here
-    pass
+
+    training_rows = train.shape[0]
+    testing_rows = test.shape[0]
+
+    assert data.shape[0] == training_rows + testing_rows
+
 
 
 # TODO: implement the second test. Change the function name and input as needed
-def test_two():
+def test_ML_model_algorithm():
     """
-    # add description for the second test
+    # Reviewing if the ML model is utilizing the RandomForestClassifier as expected
     """
-    # Your code here
-    pass
+
+    model = train_model(X_train, y_train)
+
+    assert isinstance(model, RandomForestClassifier)
 
 
 # TODO: implement the third test. Change the function name and input as needed
 def test_three():
     """
-    # add description for the third test
+    # Reviewing that the precision, recall and fbeta are greater than or equal to 0 and less than or equall to one.
     """
-    # Your code here
-    pass
+    
+    y_true = np.array([0,1,1,0])
+    y_pred = np.array([0,1,1,0])
+
+    precision, recall, fbeta = compute_model_metrics(y_true, y_pred)
+
+    assert precision >= 0
+    assert precision <= 1
+    assert recall >= 0
+    assert recall <= 1
+    assert fbeta >= 0
+    assert fbeta <= 1
