@@ -32,4 +32,4 @@ r = requests.post('http://127.0.0.1:8000/data/', json=data)
 
 print('Status Code:', r.status_code)
 
-print('Response:', r.json())
+print('Response: Result:', r.json())
